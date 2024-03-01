@@ -57,6 +57,7 @@ clock = pygame.time.Clock()
 
 class GameObject:
     """Содержит общие атрибуты объектов"""
+
     def __init__(self, body_color=None):
         """Инициализатор атрибутов"""
         self.position = CENTER_POSITION
@@ -69,6 +70,7 @@ class GameObject:
 
 class Apple(GameObject):
     """Описание яблока и его поведение."""
+
     def __init__(self, body_color=APPLE_COLOR, occupied_position=None):
         """Инициализирует атрибуты яблока."""
         super().__init__(body_color)
@@ -98,6 +100,7 @@ class Apple(GameObject):
 
 class Snake(GameObject):
     """Описание змейки и ее поведение."""
+
     def __init__(self, body_color=SNAKE_COLOR):
         """Инициализирует атрибуты змейки."""
         super().__init__(body_color)
@@ -155,7 +158,9 @@ class Snake(GameObject):
         self.head_position = self.positions[0]
 
     def reset(self):
-        """При столкновении головы змейки с ее телом сбрасывает игру в начало."""
+        """При столкновении головы змейки с ее телом
+        сбрасывает игру в начало.
+        """
         if self.head_position in self.positions[1:]:
             self.length = 1
             self.positions = [self.position]
