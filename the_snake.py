@@ -82,6 +82,10 @@ class Snake(GameObject):
         self.direction = RIGHT
         self.length = 1
 
+    def update_direction(self):
+        """Определение нового направления движения змейки."""
+        pass
+
     def move(self):
         """Анимирование движения змейки."""
         head_x, head_y = self.positions[0]
